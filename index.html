@@ -72,219 +72,441 @@
   <style>
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1.6;
     }
-    .feature-card {
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-    }
-    .feature-card:hover {
-      transform: translateY(-4px);
-      box-shadow:
-        0 20px 25px -5px rgba(0, 0, 0, 0.1),
-        0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    }
-    .hero-gradient {
+    
+    .gradient-bg {
       background: linear-gradient(135deg, #0c4a6e 0%, #1e40af 50%, #047857 100%);
     }
-    .btn-hover {
+    
+    .card-hover {
       transition: all 0.3s ease;
     }
-    .btn-hover:hover {
+    
+    .card-hover:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+    
+    .btn-primary {
+      background: linear-gradient(135deg, #059669 0%, #047857 100%);
+      transition: all 0.3s ease;
+    }
+    
+    .btn-primary:hover {
       transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 10px 15px -3px rgba(5, 150, 105, 0.3);
+    }
+    
+    .section-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent 0%, #e2e8f0 50%, transparent 100%);
+    }
+    
+    .feature-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+    }
+    
+    .floating {
+      animation: floating 3s ease-in-out infinite;
+    }
+    
+    @keyframes floating {
+      0% { transform: translate(0, 0px); }
+      50% { transform: translate(0, -10px); }
+      100% { transform: translate(0, -0px); }
     }
   </style>
 </head>
-<body class="bg-slate-50 text-gray-900">
+<body class="bg-slate-50 text-slate-900">
   <!-- Header -->
-  <header class="py-4 md:py-6 px-4 border-b border-slate-300 bg-white backdrop-blur sticky top-0 z-10">
-    <div class="max-w-6xl mx-auto flex items-center justify-between gap-3">
-      <div class="flex items-center gap-3">
-        <div class="w-9 h-9 md:w-10 md:h-10 rounded-full bg-emerald-600 flex items-center justify-center text-white font-bold text-lg">
-          F
-        </div>
-        <div>
-          <div class="text-sm uppercase tracking-wide text-emerald-700 font-semibold">
-            FortuneTell
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="flex justify-between items-center py-4">
+        <!-- Logo -->
+        <div class="flex items-center space-x-3">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-600 flex items-center justify-center text-white font-bold text-lg shadow-md">
+            F
           </div>
-          <div class="text-base md:text-lg font-semibold text-slate-900">
-            Simple Budgeting App
+          <div>
+            <div class="text-sm uppercase tracking-wider text-emerald-600 font-bold">FortuneTell</div>
+            <div class="text-lg font-bold text-slate-800">Simple Budgeting App</div>
           </div>
         </div>
+        
+        <!-- CTA Button -->
+        <a href="#waitlist" class="btn-primary text-white font-semibold py-3 px-6 rounded-xl shadow-md">
+          Join Waitlist
+        </a>
       </div>
-      <a href="#waitlist"
-         class="hidden sm:inline-flex items-center justify-center bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-medium py-2.5 px-4 rounded-lg transition-all duration-300 btn-hover">
-        Join Waitlist
-      </a>
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="py-16 md:py-20 px-4 hero-gradient text-white">
-    <div class="max-w-5xl mx-auto text-center">
-      <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight mb-6 md:mb-8 leading-tight">
-        The Simple Budgeting App for Irregular Income
-      </h1>
-      <p class="text-lg md:text-xl mb-8 md:mb-10 max-w-3xl mx-auto text-slate-100 leading-relaxed">
-        Built for freelancers, gig workers, and solopreneurs who never get the same paycheck twice.
-        See how long your money will last—by week, month, or year—without giving up control of your data.
-      </p>
-
-      <div class="bg-white/15 border border-white/30 backdrop-blur-sm rounded-2xl p-6 md:p-8 max-w-2xl mx-auto mb-8 md:mb-10">
-        <p class="text-base md:text-lg mb-6 leading-relaxed text-white">
-          Stop guessing with monthly budgets that don't match reality.
-          Forecast your cash day-by-day and build a buffer that survives slow weeks.
+<!-- Hero Section -->
+<section class="min-h-screen flex items-center gradient-bg text-white pt-20 pb-16 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 w-full">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+      <!-- Text Content -->
+      <div class="text-left order-2 lg:order-1">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+          Budgeting for <span class="text-emerald-300">Real Life</span>, Not Regular Paychecks
+        </h1>
+        
+        <p class="text-xl md:text-2xl mb-8 text-slate-100 leading-relaxed">
+          Built for freelancers, gig workers, and solopreneurs who never get the same paycheck twice.
         </p>
-        <a href="#waitlist"
-           class="inline-flex items-center justify-center bg-white text-emerald-700 font-semibold text-sm md:text-base py-3 px-8 rounded-lg hover:bg-slate-100 transition-all duration-300 btn-hover">
-          Get Early Access
-        </a>
-        <p class="mt-4 text-xs md:text-sm text-slate-200">
-          Privacy-first. Manual entry or optional sync—your choice.
+        
+        <!-- Value Points -->
+        <div class="space-y-4 mb-8">
+          <div class="flex items-center">
+            <div class="w-6 h-6 bg-emerald-400 rounded-full flex items-center justify-center mr-3">
+              <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+              </svg>
+            </div>
+            <span class="text-slate-100">See exactly how long your money will last</span>
+          </div>
+          <div class="flex items-center">
+            <div class="w-6 h-6 bg-emerald-400 rounded-full flex items-center justify-center mr-3">
+              <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+              </svg>
+            </div>
+            <span class="text-slate-100">Works with irregular income patterns</span>
+          </div>
+          <div class="flex items-center">
+            <div class="w-6 h-6 bg-emerald-400 rounded-full flex items-center justify-center mr-3">
+              <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+              </svg>
+            </div>
+            <span class="text-slate-100">Your data stays private and secure</span>
+          </div>
+        </div>
+        
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="#waitlist" class="btn-primary text-white font-semibold py-4 px-8 rounded-xl text-lg text-center">
+            Get Early Access
+          </a>
+          <a href="#features" class="bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold py-4 px-8 rounded-xl text-lg text-center transition-all">
+            Learn More
+          </a>
+        </div>
+        
+        <p class="mt-6 text-slate-300 text-sm">
+          Privacy-first • Manual entry or optional sync • No bank connection required
         </p>
       </div>
-
-      <p class="text-xs md:text-sm text-slate-200">
-        No pressure, no hype—just a simple forecasting tool for people with unpredictable income.
-      </p>
-    </div>
-  </section>
-
-  <!-- Problem -->
-  <section class="py-16 md:py-20 px-4 bg-white">
-    <div class="max-w-4xl mx-auto text-center space-y-8">
-      <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 leading-tight">
-        Most Budgeting Apps Assume a Steady Paycheck
-      </h2>
-
-      <p class="text-base md:text-lg text-slate-800 max-w-2xl mx-auto leading-relaxed">
-        Additionally, most apps want your bank login and your full transaction history.
-        You shouldn't have to become somebody else's product just to see your cash position.
-        FortuneTell respects your privacy—manual entry or selective sync, your choice.
-      </p>
-
-      <p class="text-base md:text-lg text-slate-700 max-w-2xl mx-auto leading-relaxed">
-        You don't have a predictable paycheck—and that's fine.
-        This <strong class="text-slate-900">simple budgeting app</strong> adapts to how you really earn and spend, so you can make confident decisions every day,
-        even when income jumps around.
-      </p>
-    </div>
-  </section>
-
-  <!-- Features -->
-  <section class="py-16 md:py-20 px-4 bg-slate-100">
-    <div class="max-w-6xl mx-auto">
-      <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-12 md:mb-16 text-slate-900 leading-tight">
-        Why FortuneTell Works for Irregular Income
-      </h2>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
-        <!-- Card 1 -->
-        <div class="bg-white rounded-xl p-6 shadow-sm feature-card">
-          <div class="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center mb-4">
-            <span class="text-emerald-700 font-bold text-lg">✓</span>
+      
+      <!-- App Mockup Image -->
+      <div class="relative order-1 lg:order-2">
+        <div class="relative mx-auto max-w-md">
+          <!-- Phone Frame -->
+          <div class="relative bg-gray-900 rounded-[2.5rem] h-[600px] w-[300px] mx-auto p-4 shadow-2xl">
+            <!-- Screen Content -->
+            <div class="bg-white h-full rounded-[2rem] overflow-hidden flex flex-col">
+              <!-- Status Bar -->
+              <div class="bg-slate-800 text-white px-4 py-2 text-xs flex justify-between items-center">
+                <span>9:41</span>
+                <div class="flex items-center space-x-1">
+                  <span>📶</span>
+                  <span>📡</span>
+                  <span>🔋</span>
+                </div>
+              </div>
+              
+              <!-- App Header -->
+              <div class="bg-emerald-500 text-white p-4 text-center">
+                <div class="text-2xl font-bold">$178.03</div>
+                <div class="text-sm opacity-90">December 2025</div>
+              </div>
+              
+              <!-- Calendar Section -->
+              <div class="p-4 flex-grow">
+                <!-- Calendar Grid -->
+                <div class="mb-4">
+                  <div class="grid grid-cols-7 gap-1 text-center text-xs font-medium text-slate-500 mb-3">
+                    <div>S</div>
+                    <div>M</div>
+                    <div>T</div>
+                    <div>W</div>
+                    <div>T</div>
+                    <div>F</div>
+                    <div>S</div>
+                  </div>
+                  <div class="grid grid-cols-7 gap-1 text-center text-sm font-medium text-slate-900">
+                    <!-- Week 1 -->
+                    <div class="h-8 flex items-center justify-center text-slate-400">31</div>
+                    <div class="h-8 flex items-center justify-center">1</div>
+                    <div class="h-8 flex items-center justify-center">2</div>
+                    <div class="h-8 flex items-center justify-center">3</div>
+                    <div class="h-8 flex items-center justify-center">4</div>
+                    <div class="h-8 flex items-center justify-center">5</div>
+                    <div class="h-8 flex items-center justify-center">6</div>
+                    
+                    <!-- Week 2 -->
+                    <div class="h-8 flex items-center justify-center">7</div>
+                    <div class="h-8 flex items-center justify-center">8</div>
+                    <div class="h-8 flex items-center justify-center">9</div>
+                    <div class="h-8 flex items-center justify-center">10</div>
+                    <div class="h-8 flex items-center justify-center bg-emerald-300 text-slate-900 rounded-full">11</div>
+                    <div class="h-8 flex items-center justify-center">12</div>
+                    <div class="h-8 flex items-center justify-center">13</div>
+                    
+                    <!-- Week 3 -->
+                    <div class="h-8 flex items-center justify-center">14</div>
+                    <div class="h-8 flex items-center justify-center">15</div>
+                    <div class="h-8 flex items-center justify-center bg-yellow-200 text-slate-900 rounded-full">16</div>
+                    <div class="h-8 flex items-center justify-center">17</div>
+                    <div class="h-8 flex items-center justify-center bg-red-400 text-slate-900 rounded-full">18</div>
+                    <div class="h-8 flex items-center justify-center">19</div>
+                    <div class="h-8 flex items-center justify-center">20</div>
+                    
+                    <!-- Week 4 -->
+                    <div class="h-8 flex items-center justify-center">21</div>
+                    <div class="h-8 flex items-center justify-center">22</div>
+                    <div class="h-8 flex items-center justify-center">23</div>
+                    <div class="h-8 flex items-center justify-center">24</div>
+                    <div class="h-8 flex items-center justify-center">25</div>
+                    <div class="h-8 flex items-center justify-center">26</div>
+                    <div class="h-8 flex items-center justify-center bg-red-400 text-slate-900 rounded-full">27</div>
+                    
+                    <!-- Week 5 -->
+                    <div class="h-8 flex items-center justify-center">28</div>
+                    <div class="h-8 flex items-center justify-center">29</div>
+                    <div class="h-8 flex items-center justify-center">30</div>
+                    <div class="h-8 flex items-center justify-center">31</div>
+                    <div class="h-8 flex items-center justify-center text-slate-400">1</div>
+                    <div class="h-8 flex items-center justify-center text-slate-400">2</div>
+                    <div class="h-8 flex items-center justify-center text-slate-400">3</div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Bottom Navigation -->
+              <div class="bg-slate-50 border-t border-slate-200 p-3 mt-auto">
+                <div class="grid grid-cols-4 gap-2 text-xs text-center">
+                  <!-- Profile -->
+                  <div class="flex flex-col items-center space-y-1">
+                    <div class="w-6 h-6 bg-slate-300 rounded-full flex items-center justify-center">
+                      <svg class="w-3 h-3 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                      </svg>
+                    </div>
+                    <span class="text-slate-600">Profile</span>
+                  </div>
+                  
+                  <!-- Accounts -->
+                  <div class="flex flex-col items-center space-y-1">
+                    <div class="w-6 h-6 bg-slate-300 rounded-full flex items-center justify-center">
+                      <svg class="w-3 h-3 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/>
+                      </svg>
+                    </div>
+                    <span class="text-slate-600">Accounts</span>
+                  </div>
+                  
+                  <!-- Budgets -->
+                  <div class="flex flex-col items-center space-y-1">
+                    <div class="w-6 h-6 bg-slate-300 rounded-full flex items-center justify-center">
+                      <svg class="w-3 h-3 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                      </svg>
+                    </div>
+                    <span class="text-slate-600">Budgets</span>
+                  </div>
+                  
+                  <!-- Projections -->
+                  <div class="flex flex-col items-center space-y-1">
+                    <div class="w-6 h-6 bg-slate-300 rounded-full flex items-center justify-center">
+                      <svg class="w-3 h-3 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                      </svg>
+                    </div>
+                    <span class="text-slate-600">Projections</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <h3 class="text-lg md:text-xl font-semibold mb-3 text-slate-900">
-            Simple Balance & Forecast
-          </h3>
-          <p class="text-sm md:text-base text-slate-700 leading-relaxed">
+          
+          <!-- Floating elements around phone -->
+          <div class="absolute -top-6 -right-6 w-12 h-12 bg-emerald-400/20 rounded-full floating"></div>
+          <div class="absolute -bottom-8 -left-8 w-16 h-16 bg-blue-400/20 rounded-full floating" style="animation-delay: 1.5s;"></div>
+          <div class="absolute top-1/2 -right-10 w-8 h-8 bg-purple-400/20 rounded-full floating" style="animation-delay: 2.5s;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  
+  <!-- Problem Section -->
+  <section class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+          Most Budgeting Apps Assume a <span class="text-emerald-600">Steady Paycheck</span>
+        </h2>
+        
+        <div class="max-w-3xl mx-auto">
+          <p class="text-lg text-slate-700 mb-6 leading-relaxed">
+            Additionally, most apps want your bank login and your full transaction history.
+            You shouldn't have to become somebody else's product just to see your cash position.
+          </p>
+          
+          <p class="text-lg text-slate-700 leading-relaxed">
+            You don't have a predictable paycheck—and that's fine.
+            This <span class="font-bold text-slate-900">simple budgeting app</span> adapts to how you really earn and spend, so you can make confident decisions every day,
+            even when income jumps around.
+          </p>
+        </div>
+      </div>
+      
+      <!-- Visual Divider -->
+      <div class="section-divider my-16"></div>
+      
+      <!-- Privacy Focus -->
+      <div class="bg-slate-50 rounded-2xl p-8 md:p-12 text-center max-w-4xl mx-auto">
+        <div class="feature-icon mx-auto">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+          </svg>
+        </div>
+        
+        <h3 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6">
+          FortuneTell Respects Your Privacy
+        </h3>
+        
+        <p class="text-lg text-slate-700 max-w-2xl mx-auto">
+          Manual entry or selective sync, your choice. Your financial data stays with you.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="py-20 bg-slate-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+          Why FortuneTell Works for <span class="text-emerald-600">Irregular Income</span>
+        </h2>
+        <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+          Designed specifically for the realities of freelance work, gig economy jobs, and entrepreneurial ventures
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Feature 1 -->
+        <div class="bg-white rounded-2xl p-8 card-hover">
+          <div class="feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-4">Simple Balance & Forecast</h3>
+          <p class="text-slate-700">
             See your balance today and project it forward—by day, week, month, or year.
             Choose the time horizon that actually matches how you earn and spend.
           </p>
         </div>
-
-        <!-- Card 2 -->
-        <div class="bg-white rounded-xl p-6 shadow-sm feature-card">
-          <div class="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center mb-4">
-            <span class="text-emerald-700 font-bold text-lg">✓</span>
+        
+        <!-- Feature 2 -->
+        <div class="bg-white rounded-2xl p-8 card-hover">
+          <div class="feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+            </svg>
           </div>
-          <h3 class="text-lg md:text-xl font-semibold mb-3 text-slate-900">
-            Built for Irregular Income
-          </h3>
-          <p class="text-sm md:text-base text-slate-700 leading-relaxed">
-            Works with your actual gigs and invoices.
-            Biweekly pay, tips, bonuses, retainers—set them once and forecast them forward.
-            No forced monthly cycles or rigid "paycheck" assumptions.
+          <h3 class="text-xl font-bold text-slate-900 mb-4">Built for Irregular Income</h3>
+          <p class="text-slate-700">
+            Works with your actual gigs and invoices. Biweekly pay, tips, bonuses, retainers—set them once and forecast them forward.
           </p>
         </div>
-
-        <!-- Card 3 -->
-        <div class="bg-white rounded-xl p-6 shadow-sm feature-card">
-          <div class="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center mb-4">
-            <span class="text-emerald-700 font-bold text-lg">✓</span>
+        
+        <!-- Feature 3 -->
+        <div class="bg-white rounded-2xl p-8 card-hover">
+          <div class="feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
+            </svg>
           </div>
-          <h3 class="text-lg md:text-xl font-semibold mb-3 text-slate-900">
-            Buffers & Savings Buckets
-          </h3>
-          <p class="text-sm md:text-base text-slate-700 leading-relaxed">
-            Build a buffer or savings bucket that grows over time.
-            Set categories to accumulate instead of reset, and track your safety net
-            alongside your regular spending so slow weeks don't break you.
+          <h3 class="text-xl font-bold text-slate-900 mb-4">Buffers & Savings Buckets</h3>
+          <p class="text-slate-700">
+            Build a buffer or savings bucket that grows over time. Set categories to accumulate instead of reset.
           </p>
         </div>
-
-        <!-- Card 4 -->
-        <div class="bg-white rounded-xl p-6 shadow-sm feature-card">
-          <div class="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center mb-4">
-            <span class="text-emerald-700 font-bold text-lg">✓</span>
+        
+        <!-- Feature 4 -->
+        <div class="bg-white rounded-2xl p-8 card-hover">
+          <div class="feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+            </svg>
           </div>
-          <h3 class="text-lg md:text-xl font-semibold mb-3 text-slate-900">
-            Manual-First, Quiet Sync
-          </h3>
-          <p class="text-sm md:text-base text-slate-700 leading-relaxed">
+          <h3 class="text-xl font-bold text-slate-900 mb-4">Manual-First, Quiet Sync</h3>
+          <p class="text-slate-700">
             Stay hands-on with manual entry for awareness, or turn on quiet auto-sync later.
             Sync selectively instead of handing over your entire financial life.
-            You stay in control of what comes in.
           </p>
         </div>
-
-        <!-- Card 5 -->
-        <div class="bg-white rounded-xl p-6 shadow-sm feature-card">
-          <div class="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center mb-4">
-            <span class="text-emerald-700 font-bold text-lg">✓</span>
+        
+        <!-- Feature 5 -->
+        <div class="bg-white rounded-2xl p-8 card-hover">
+          <div class="feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+            </svg>
           </div>
-          <h3 class="text-lg md:text-xl font-semibold mb-3 text-slate-900">
-            Mobile-First, Fast to Use
-          </h3>
-          <p class="text-sm md:text-base text-slate-700 leading-relaxed">
+          <h3 class="text-xl font-bold text-slate-900 mb-4">Mobile-First, Fast to Use</h3>
+          <p class="text-slate-700">
             Designed for quick checks between gigs, deliveries, or client calls.
-            See your cash runway in a few taps without digging through charts and dashboards.
+            See your cash runway in a few taps.
           </p>
         </div>
-
-        <!-- Card 6 -->
-        <div class="bg-white rounded-xl p-6 shadow-sm feature-card">
-          <div class="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center mb-4">
-            <span class="text-emerald-700 font-bold text-lg">✓</span>
+        
+        <!-- Feature 6 -->
+        <div class="bg-white rounded-2xl p-8 card-hover">
+          <div class="feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
           </div>
-          <h3 class="text-lg md:text-xl font-semibold mb-3 text-slate-900">
-            Privacy-First by Design
-          </h3>
-          <p class="text-sm md:text-base text-slate-700 leading-relaxed">
+          <h3 class="text-xl font-bold text-slate-900 mb-4">Privacy-First by Design</h3>
+          <p class="text-slate-700">
             Your data stays with you. No ads, no selling your information, no "you are the product" games.
-            Manual entry, optional sync—you decide who sees what and when.
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Waitlist -->
-  <section id="waitlist" class="py-16 md:py-20 px-4 bg-white">
-    <div class="max-w-3xl mx-auto text-center">
-      <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 text-slate-900 leading-tight">
-        Join the Waitlist for Early Access
-      </h2>
-      <p class="text-base md:text-lg text-slate-700 mb-8 max-w-2xl mx-auto leading-relaxed">
-        Get early access to the <strong class="text-slate-900">simple budgeting app</strong> designed for how you actually work and earn,
-        with irregular income and unpredictable months.
-      </p>
-      <p class="text-xs md:text-sm text-slate-600 mb-8 max-w-2xl mx-auto">
-        Your data is safe with us—manual entry or optional sync, your choice.
-        No sign-up or bank connection required just to understand what we're building.
-      </p>
-
-      <div class="bg-slate-100 rounded-xl p-2 md:p-6 border border-slate-300 mb-8">
+  <!-- Waitlist Section -->
+  <section id="waitlist" class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+          Join the Waitlist for <span class="text-emerald-600">Early Access</span>
+        </h2>
+        
+        <p class="text-lg text-slate-700 max-w-2xl mx-auto mb-6">
+          Get early access to the <span class="font-bold text-slate-900">simple budgeting app</span> designed for how you actually work and earn,
+          with irregular income and unpredictable months.
+        </p>
+        
+        <p class="text-slate-600 max-w-2xl mx-auto">
+          Your data is safe with us—manual entry or optional sync, your choice.
+          No sign-up or bank connection required just to understand what we're building.
+        </p>
+      </div>
+      
+      <div class="bg-gradient-to-r from-slate-50 to-emerald-50 rounded-2xl p-8 border border-slate-200">
         <iframe
           src="https://docs.google.com/forms/d/e/1FAIpQLSf5Jmt0dmwxAfa59AdiPCnOw_07ehbutx_fDtA-7Dzwv1rs3Q/viewform?embedded=true"
           width="100%"
@@ -299,99 +521,79 @@
           Loading…
         </iframe>
       </div>
-
-      <p class="text-xs md:text-sm text-slate-600">
+      
+      <p class="text-center mt-8 text-slate-500 text-sm">
         No spam. No upsells. Just occasional updates as FortuneTell moves from private testing to public launch.
       </p>
     </div>
   </section>
 
-  <!-- FAQ -->
-  <section class="py-16 md:py-20 px-4 bg-slate-100">
-    <div class="max-w-3xl mx-auto">
-      <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-12 text-slate-900 leading-tight">
-        Simple Budgeting App FAQs
-      </h2>
-
-      <div class="space-y-6 md:space-y-8">
-        <!-- FAQ: Privacy / Data control -->
-        <div class="bg-white rounded-xl p-6 md:p-7 shadow-sm">
-          <h3 class="text-lg md:text-xl font-semibold mb-3 text-slate-900">
-            Will my data be sold or tracked?
-          </h3>
-          <p class="text-sm md:text-base text-slate-700 leading-relaxed">
+  <!-- FAQ Section -->
+  <section class="py-20 bg-slate-100">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+          Simple Budgeting App <span class="text-emerald-600">FAQs</span>
+        </h2>
+        <p class="text-lg text-slate-600">Common questions about FortuneTell</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- FAQ 1 -->
+        <div class="bg-white rounded-2xl p-8 card-hover">
+          <h3 class="text-xl font-bold text-slate-900 mb-4">Will my data be sold or tracked?</h3>
+          <p class="text-slate-700">
             No. We don't sell your data, run ads, or turn you into a product.
             Manual entry keeps you in full control, and optional bank sync only brings in what you choose.
             Your financial data is yours.
           </p>
         </div>
-
-        <!-- FAQ: Simplicity -->
-        <div class="bg-white rounded-xl p-6 md:p-7 shadow-sm">
-          <h3 class="text-lg md:text-xl font-semibold mb-3 text-slate-900">
-            Is this budgeting app really simple to use?
-          </h3>
-          <p class="text-sm md:text-base text-slate-700 leading-relaxed">
+        
+        <!-- FAQ 2 -->
+        <div class="bg-white rounded-2xl p-8 card-hover">
+          <h3 class="text-xl font-bold text-slate-900 mb-4">Is this budgeting app really simple to use?</h3>
+          <p class="text-slate-700">
             Yes. FortuneTell focuses on the question that matters most:
-            <strong class="text-slate-900">how long will my money last?</strong>
+            <span class="font-bold text-slate-900">how long will my money last?</span>
             No complex category trees, no complicated dashboards—just your cash, your timeline, and clear next steps.
           </p>
         </div>
-
-        <!-- FAQ: Who it's for -->
-        <div class="bg-white rounded-xl p-6 md:p-7 shadow-sm">
-          <h3 class="text-lg md:text-xl font-semibold mb-3 text-slate-900">
-            Who is this simple budgeting app for?
-          </h3>
-          <p class="text-sm md:text-base text-slate-700 leading-relaxed">
+        
+        <!-- FAQ 3 -->
+        <div class="bg-white rounded-2xl p-8 card-hover">
+          <h3 class="text-xl font-bold text-slate-900 mb-4">Who is this simple budgeting app for?</h3>
+          <p class="text-slate-700">
             FortuneTell is designed for freelancers, gig workers, and solopreneurs with irregular income.
             If your pay changes week-to-week, month-to-month, or season-to-season,
-            this app is built to match your reality instead of forcing a fixed monthly mold.
+            this app is built to match your reality.
           </p>
         </div>
-
-        <!-- FAQ: Bank connection -->
-        <div class="bg-white rounded-xl p-6 md:p-7 shadow-sm">
-          <h3 class="text-lg md:text-xl font-semibold mb-3 text-slate-900">
-            Do I have to connect my bank account?
-          </h3>
-          <p class="text-sm md:text-base text-slate-700 leading-relaxed">
+        
+        <!-- FAQ 4 -->
+        <div class="bg-white rounded-2xl p-8 card-hover">
+          <h3 class="text-xl font-bold text-slate-900 mb-4">Do I have to connect my bank account?</h3>
+          <p class="text-slate-700">
             No. You can use manual entry only, or turn on optional sync later if you want automation.
             Many people prefer to start manual for awareness and then selectively sync once they trust the numbers.
           </p>
         </div>
-
-        <!-- FAQ: Sinking fund / buffer -->
-        <div class="bg-white rounded-xl p-6 md:p-7 shadow-sm">
-          <h3 class="text-lg md:text-xl font-semibold mb-3 text-slate-900">
-            Can I use this to build a buffer or sinking fund?
-          </h3>
-          <p class="text-sm md:text-base text-slate-700 leading-relaxed">
+        
+        <!-- FAQ 5 -->
+        <div class="bg-white rounded-2xl p-8 card-hover">
+          <h3 class="text-xl font-bold text-slate-900 mb-4">Can I use this to build a buffer or sinking fund?</h3>
+          <p class="text-slate-700">
             Yes. You can treat a category like a savings bucket that accumulates instead of resetting.
             Add to it regularly, watch it grow alongside your spending,
             and use it as a buffer to smooth out slow weeks or irregular invoices.
           </p>
         </div>
-
-        <!-- FAQ: Time horizons -->
-        <div class="bg-white rounded-xl p-6 md:p-7 shadow-sm">
-          <h3 class="text-lg md:text-xl font-semibold mb-3 text-slate-900">
-            Do I have to budget monthly?
-          </h3>
-          <p class="text-sm md:text-base text-slate-700 leading-relaxed">
+        
+        <!-- FAQ 6 -->
+        <div class="bg-white rounded-2xl p-8 card-hover">
+          <h3 class="text-xl font-bold text-slate-900 mb-4">Do I have to budget monthly?</h3>
+          <p class="text-slate-700">
             No. You can forecast by week, biweekly, quarter, or year—whatever matches how you get paid and plan.
             If you're paid weekly or quarterly, your forecast can follow that rhythm instead of forcing a monthly box.
-          </p>
-        </div>
-
-        <!-- FAQ: Launch timing -->
-        <div class="bg-white rounded-xl p-6 md:p-7 shadow-sm">
-          <h3 class="text-lg md:text-xl font-semibold mb-3 text-slate-900">
-            When will this simple budgeting app launch?
-          </h3>
-          <p class="text-sm md:text-base text-slate-700 leading-relaxed">
-            FortuneTell is currently in private testing with a small group of freelancers and gig workers.
-            Public launch is coming soon. Joining the waitlist helps shape the roadmap and gives you early access.
           </p>
         </div>
       </div>
@@ -399,14 +601,28 @@
   </section>
 
   <!-- Footer -->
-  <footer class="py-8 md:py-10 px-4 bg-slate-900 text-slate-300">
-    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-      <p class="text-xs md:text-sm text-center md:text-left">
-        © <span id="year"></span> FortuneTell – Simple Budgeting for Irregular Income. All rights reserved.
-      </p>
-      <p class="text-xs md:text-sm text-slate-400 text-center md:text-right">
-        Built quietly for freelancers, gig workers, and solo earners who need clarity without noise.
-      </p>
+  <footer class="py-12 bg-slate-900 text-slate-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-6 md:mb-0">
+          <div class="flex items-center space-x-3 mb-4">
+            <div class="w-8 h-8 rounded-lg bg-emerald-500 flex items-center justify-center text-white font-bold">
+              F
+            </div>
+            <div>
+              <div class="text-sm uppercase tracking-wider text-emerald-400 font-bold">FortuneTell</div>
+              <div class="text-white font-semibold">Simple Budgeting App</div>
+            </div>
+          </div>
+          <p class="text-slate-400 text-sm">
+            © <span id="year"></span> FortuneTell – Simple Budgeting for Irregular Income. All rights reserved.
+          </p>
+        </div>
+        
+        <p class="text-slate-400 text-sm text-center md:text-right">
+          Built quietly for freelancers, gig workers, and solo earners who need clarity without noise.
+        </p>
+      </div>
     </div>
     <script>
       document.getElementById('year').textContent = new Date().getFullYear();
