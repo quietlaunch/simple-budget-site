@@ -14,11 +14,14 @@ const getCorsHeaders = (req: Request) => {
   const allowOrigin = allowedOrigins.has(origin)
     ? origin
     : "https://simple-budget.app";
+  const requestedHeaders =
+    req.headers.get("access-control-request-headers") || "Content-Type";
 
   return {
     "Access-Control-Allow-Origin": allowOrigin,
-    "Access-Control-Allow-Headers": "Content-Type",
+    "Access-Control-Allow-Headers": requestedHeaders,
     "Access-Control-Allow-Methods": "POST, OPTIONS",
+    "Access-Control-Max-Age": "86400",
     "Vary": "Origin",
   };
 };
