@@ -2,23 +2,43 @@
 
 import { createClient } from "npm:@supabase/supabase-js@2.48.0";
 
+const allowedOrigins = new Set([
+  "https://simple-budget.app",
+  "https://www.simple-budget.app",
+  "http://localhost:4321",
+  "http://localhost:3000",
+]);
+
+const getCorsHeaders = (req: Request) => {
+  const origin = req.headers.get("origin") || "";
+  const allowOrigin = allowedOrigins.has(origin)
+    ? origin
+    : "https://simple-budget.app";
+
+  return {
+    "Access-Control-Allow-Origin": allowOrigin,
+    "Access-Control-Allow-Headers": "Content-Type",
+    "Access-Control-Allow-Methods": "POST, OPTIONS",
+    "Vary": "Origin",
+  };
+};
+
 Deno.serve(async (req: Request) => {
 
   if (req.method === "OPTIONS") {
     return new Response(null, {
       status: 204,
-      headers: {
-        "Access-Control-Allow-Origin": "https://simple-budget.app",
-        "Access-Control-Allow-Headers": "Content-Type",
-        "Access-Control-Allow-Methods": "POST, OPTIONS",
-      },
+      headers: getCorsHeaders(req),
     });
   }
 
   if (req.method !== "POST") {
     return new Response(JSON.stringify({ error: "Method not allowed" }), {
       status: 405,
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        ...getCorsHeaders(req),
+      },
     });
   }
 
@@ -28,7 +48,10 @@ Deno.serve(async (req: Request) => {
     if (!email || typeof email !== "string") {
       return new Response(JSON.stringify({ error: "Email required" }), {
         status: 400,
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          ...getCorsHeaders(req),
+        },
       });
     }
 
@@ -38,7 +61,10 @@ Deno.serve(async (req: Request) => {
     if (!supabaseUrl || !serviceKey) {
       return new Response(JSON.stringify({ error: "Server misconfigured" }), {
         status: 500,
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          ...getCorsHeaders(req),
+        },
       });
     }
 
@@ -54,7 +80,10 @@ Deno.serve(async (req: Request) => {
       console.error("Insert error:", error);
       return new Response(JSON.stringify({ error: "Insert failed" }), {
         status: 500,
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          ...getCorsHeaders(req),
+        },
       });
     }
 
@@ -62,16 +91,17 @@ Deno.serve(async (req: Request) => {
       status: 200,
       headers: {
         "Content-Type": "application/json",
-        // Allow calls from your landing domain
-        "Access-Control-Allow-Origin": "https://simple-budget.app",
-        "Access-Control-Allow-Headers": "Content-Type",
+        ...getCorsHeaders(req),
       },
     });
   } catch (e) {
     console.error("Unexpected error:", e);
     return new Response(JSON.stringify({ error: "Unexpected error" }), {
       status: 500,
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        ...getCorsHeaders(req),
+      },
     });
   }
 });
