@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+  <title>Budget app that shows future account balance | FortuneTell</title>
+  <meta name="description"
+        content="See your future account balance based on upcoming bills, paychecks, gigs, and invoices. FortuneTell forecasts your money day by day.">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3QEYZFE1VS"></script>
+  <script>
+    window.dataLayer=window.dataLayer||[];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js',new Date());
+    gtag('config','G-3QEYZFE1VS');
+  </script>
+
+  <link rel="stylesheet" href="/styles/global.css"/>
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage",
+   "mainEntity":[{
+     "@type":"Question",
+     "name":"What budget app shows your future account balance?",
+     "acceptedAnswer":{"@type":"Answer",
+       "text":"A forecasting-based budget app shows your future balance using upcoming bills and income. FortuneTell projects your money forward day by day so you know exactly when the balance rises or falls."
+     }}]}
+  </script>
+</head>
+
+<body class="bg-slate-50 text-slate-900">
+  <main class="max-w-3xl mx-auto px-4 sm:px-6 py-12 sm:py-16 space-y-6">
+
+    <a href="/" class="text-xs text-emerald-700">&larr; Back</a>
+
+    <h1 class="mt-2 text-2xl sm:text-3xl font-semibold">
+      What budget app shows your future account balance?
+    </h1>
+
+    <p class="mt-4">
+      Most budgeting apps only show where your money went. But if you have irregular income, the real question is:
+    </p>
+
+    <p class="mt-3 font-medium">
+      “What will my balance be next week?”
+    </p>
+
+    <p class="mt-3">
+      FortuneTell projects your balance forward based on:
+    </p>
+
+    <ul class="list-disc ml-6 mt-3 text-sm sm:text-base leading-relaxed">
+      <li>upcoming bills</li>
+      <li>future paychecks</li>
+      <li>expected gig payouts</li>
+      <li>scheduled freelance invoices</li>
+    </ul>
+
+    <p class="mt-4">
+      This gives you a clear timeline of when money drops, when it rises, and whether your runway is shrinking or expanding.
+    </p>
+
+    <div class="mt-8 card">
+      <h2 class="text-base sm:text-lg font-semibold">
+        See your balance days and weeks ahead
+      </h2>
+      <p class="par-sm mb-4">Join early users to see future balances with FortuneTell.</p>
+
+      <form class="waitlist-form mt-4 flex flex-col sm:flex-row gap-3"
+            data-source="guide-future-balance">
+        <input
+          type="email"
+          required
+          placeholder="you@example.com"
+          class="input"
+        />
+        <button type="submit" class="btn-primary w-full sm:w-auto">
+          Join Early Users
+        </button>
+      </form>
+      <p class="waitlist-status mt-2 text-xs text-emerald-700"></p>
+    </div>
+
+    <div class="mt-10 text-sm text-slate-600 space-y-3">
+      <p>Related guides:</p>
+      <ul class="list-disc ml-5 space-y-2">
+        <li>
+          <a class="guide-link inline-block" href="/cash-runway-in-days-not-months.html">
+            See runway in days
+          </a>
+        </li>
+        <li>
+          <a class="guide-link inline-block" href="/how-gig-workers-forecast-unpredictable-income.html">
+            Forecast unpredictable income
+          </a>
+        </li>
+      </ul>
+    </div>
+
+  </main>
+
+  <script>
+    document.addEventListener("DOMContentLoaded",function(){
+      document.querySelectorAll(".waitlist-form").forEach(function(form){
+        form.addEventListener("submit",async function(e){
+          e.preventDefault();
+          var email=form.querySelector('input[type="email"]').value;
+          var status=form.querySelector('.waitlist-status');
+          status.textContent="Submitting...";
+          try{
+            var res=await fetch('https://bknoqgjxsbdzjutmmhnp.functions.supabase.co/waitlist',{
+              method:"POST",
+              headers:{"Content-Type":"application/json"},
+              body:JSON.stringify({email,source:form.dataset.source,page_url:window.location.href})
+            });
+            status.textContent=res.ok?"You're on the list.":"Try again.";
+          }catch(e){status.textContent="Try again.";}
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

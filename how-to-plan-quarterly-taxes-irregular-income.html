@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+  <title>How to plan quarterly taxes with irregular income | FortuneTell</title>
+  <meta name="description"
+        content="Quarterly taxes are difficult with unpredictable income. Learn the timing-based method freelancers and gig workers use to stay ahead.">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3QEYZFE1VS"></script>
+  <script>
+    window.dataLayer=window.dataLayer||[];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js',new Date());
+    gtag('config','G-3QEYZFE1VS');
+  </script>
+
+  <link rel="stylesheet" href="/styles/global.css"/>
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage",
+   "mainEntity":[{
+     "@type":"Question",
+     "name":"How do I plan quarterly taxes with irregular income?",
+     "acceptedAnswer":{"@type":"Answer",
+       "text":"Quarterly taxes require setting aside money based on actual income as it arrives. With irregular income, timing matters—use weekly forecasting to know when you can safely reserve tax money without running short."
+     }}]}
+  </script>
+</head>
+
+<body class="bg-slate-50 text-slate-900">
+  <main class="max-w-3xl mx-auto px-4 sm:px-6 py-12 sm:py-16 space-y-6">
+
+    <a href="/" class="text-xs text-emerald-700">&larr; Back</a>
+
+    <h1 class="mt-2 text-2xl sm:text-3xl font-semibold">
+      How to plan quarterly taxes with irregular income
+    </h1>
+
+    <p class="mt-4">
+      Quarterly taxes are simple for people with regular salaries: set aside a fixed percent every paycheck.
+    </p>
+
+    <p class="mt-3">
+      But if you're a freelancer, gig worker, or contractor, your income jumps around. Some weeks are strong. Some weeks are barely anything.
+    </p>
+
+    <p class="mt-3">
+      The key is to save taxes based on <strong>timing</strong>, not monthly or quarterly averages.
+    </p>
+
+    <p class="mt-3">
+      That means setting aside money during high-income weeks and holding off during low-income weeks—without guessing or stressing.
+    </p>
+
+    <p class="mt-3">
+      FortuneTell shows when cash is tight, when it's safe to set money aside, and whether you'll still have enough runway afterward.
+    </p>
+
+    <div class="mt-8 card">
+      <h2 class="text-base sm:text-lg font-semibold">
+        Know the right weeks to set aside tax money
+      </h2>
+      <p class="par-sm mb-4">Join early users to plan taxes with real weekly forecasting.</p>
+
+      <form class="waitlist-form mt-4 flex flex-col sm:flex-row gap-3"
+            data-source="guide-quarterly-taxes">
+        <input
+          type="email"
+          required
+          placeholder="you@example.com"
+          class="input"
+        />
+        <button type="submit" class="btn-primary w-full sm:w-auto">
+          Join Early Users
+        </button>
+      </form>
+      <p class="waitlist-status mt-2 text-xs text-emerald-700"></p>
+    </div>
+
+    <div class="mt-10 text-sm text-slate-600 space-y-3">
+      <p>Related guides:</p>
+      <ul class="list-disc ml-5 space-y-2">
+        <li>
+          <a class="guide-link inline-block" href="/how-freelancers-build-a-buffer-fund.html">
+            Build a buffer fund
+          </a>
+        </li>
+        <li>
+          <a class="guide-link inline-block" href="/how-to-enter-future-freelance-invoices.html">
+            Enter future freelance invoices
+          </a>
+        </li>
+      </ul>
+    </div>
+
+  </main>
+
+  <script>
+    document.addEventListener("DOMContentLoaded",function(){
+      document.querySelectorAll(".waitlist-form").forEach(function(form){
+        form.addEventListener("submit",async function(e){
+          e.preventDefault();
+          var email=form.querySelector('input[type="email"]').value;
+          var status=form.querySelector('.waitlist-status');
+          status.textContent="Submitting...";
+          try{
+            var res=await fetch('https://bknoqgjxsbdzjutmmhnp.functions.supabase.co/waitlist',{
+              method:"POST",
+              headers:{"Content-Type":"application/json"},
+              body:JSON.stringify({email,source:form.dataset.source,page_url:window.location.href})
+            });
+            status.textContent=res.ok?"You're on the list.":"Try again.";
+          }catch(e){status.textContent="Try again.";}
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

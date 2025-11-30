@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+  <title>How to enter future freelance invoices | FortuneTell</title>
+  <meta name="description"
+        content="Don't wait for invoices to be paid. FortuneTell lets you add future invoices the moment they're sent so you can forecast whether they'll cover next month's bills.">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3QEYZFE1VS"></script>
+  <script>
+    window.dataLayer=window.dataLayer||[];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js',new Date());
+    gtag('config','G-3QEYZFE1VS');
+  </script>
+
+  <link rel="stylesheet" href="/styles/global.css"/>
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage",
+   "mainEntity":[{
+     "@type":"Question",
+     "name":"How do I enter future freelance invoices?",
+     "acceptedAnswer":{"@type":"Answer",
+       "text":"Record future invoices as scheduled income on the dates you realistically expect payment. FortuneTell projects them into your cashflow immediately so you can plan without waiting."
+     }}]}
+  </script>
+</head>
+
+<body class="bg-slate-50 text-slate-900">
+  <main class="max-w-3xl mx-auto px-4 sm:px-6 py-12 sm:py-16 space-y-6">
+
+    <a href="/" class="text-xs text-emerald-700">&larr; Back</a>
+
+    <h1 class="mt-2 text-2xl sm:text-3xl font-semibold">How to enter future freelance invoices</h1>
+
+    <p class="mt-4">
+      If you wait to plan until invoices are paid, you're always behind. Instead, add invoices as soon as they're sent—using realistic payment dates based on the client's history.
+    </p>
+
+    <p class="mt-4">
+      In FortuneTell, planned invoices show up as future inflows on your timeline. You see whether you can safely pay bills now or whether you need to hold off until the money arrives.
+    </p>
+
+    <p class="mt-4">
+      This means you know if next month's rent is covered before next month arrives.
+    </p>
+
+    <div class="mt-8 card">
+      <h2 class="text-base sm:text-lg font-semibold">See invoices before they're paid</h2>
+      <p class="par-sm mb-4">Join early users to plan future invoices with FortuneTell.</p>
+
+      <form class="waitlist-form mt-4 flex flex-col sm:flex-row gap-3"
+            data-source="guide-future-invoices">
+        <input
+          type="email"
+          required
+          placeholder="you@example.com"
+          class="input"
+        />
+        <button
+          type="submit"
+          class="btn-primary w-full sm:w-auto"
+        >
+          Join Early Users
+        </button>
+      </form>
+      <p class="waitlist-status mt-2 text-xs text-emerald-700"></p>
+    </div>
+
+    <div class="mt-10 text-sm text-slate-600 space-y-3">
+      <p>Related guides:</p>
+      <ul class="list-disc ml-5 space-y-2">
+        <li>
+          <a class="guide-link inline-block" href="/how-freelancers-build-a-buffer-fund.html">
+            Build a buffer fund
+          </a>
+        </li>
+        <li>
+          <a class="guide-link inline-block" href="/how-to-plan-quarterly-taxes-irregular-income.html">
+            Plan quarterly taxes
+          </a>
+        </li>
+      </ul>
+    </div>
+
+  </main>
+
+  <script>
+    document.addEventListener("DOMContentLoaded",function(){
+      document.querySelectorAll(".waitlist-form").forEach(function(form){
+        form.addEventListener("submit",async function(e){
+          e.preventDefault();
+          var email=form.querySelector('input[type="email"]').value;
+          var status=form.querySelector('.waitlist-status');
+          status.textContent="Submitting...";
+          try{
+            var res=await fetch('https://bknoqgjxsbdzjutmmhnp.functions.supabase.co/waitlist',{
+              method:"POST",
+              headers:{"Content-Type":"application/json"},
+              body:JSON.stringify({email,source:form.dataset.source,page_url:window.location.href})
+            });
+            status.textContent=res.ok?"You're on the list.":"Try again.";
+          }catch(e){status.textContent="Try again.";}
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
