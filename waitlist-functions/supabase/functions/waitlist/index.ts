@@ -7,6 +7,7 @@ const allowedOrigins = new Set([
   "https://www.simple-budget.app",
   "http://localhost:4321",
   "http://localhost:3000",
+  "http://localhost:5500",
 ]);
 
 const getCorsHeaders = (req: Request) => {
