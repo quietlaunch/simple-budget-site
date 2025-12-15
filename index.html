@@ -131,24 +131,24 @@
   </script>
 </head>
 
-<body class="bg-slate-50 text-slate-900">
+<body class="bg-white text-slate-900">
   <!-- Header -->
   <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-xl border-b border-slate-200 shadow-banner">
     <div class="container-xl">
       <div class="flex justify-between items-center py-4">
         <!-- Logo -->
         <div class="flex items-center space-x-3">
-          <div class="w-10 h-10 rounded-xl bg-emerald-600 flex items-center justify-center text-white font-bold text-lg shadow-soft">
+          <div class="w-12 h-12 rounded-xl bg-emerald-600 flex items-center justify-center text-white font-bold text-lg shadow-soft">
             F
           </div>
           <div>
-            <div class="text-[0.7rem] uppercase tracking-[0.2em] text-emerald-600 font-semibold">FortuneTell</div>
-            <div class="text-base sm:text-lg font-semibold text-slate-800">Simple Budgeting App</div>
+            <div class="uppercase tracking-[0.2em] text-emerald-600 font-semibold leading-relaxed">Simple Budget Forecasting</div>
+            <div class="text-4xl sm:text-4xl font-bold text-slate-900 text-slate-800">FortuneTell</div>
           </div>
         </div>
 
         <!-- Header CTA -->
-        <div class="hidden sm:flex items-center space-x-5 text-sm">
+        <div class="hidden sm:flex items-center space-x-5">
           <a href="#features" class="text-slate-600 hover:text-slate-900">
             Features
           </a>
@@ -167,204 +167,179 @@
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="banner">
-    <div class="container-xl section">
-      <div class="grid gap-10 lg:grid-cols-2 lg:items-center">
-        <!-- Left: text + form -->
-        <div class="space-y-6">
-          <p class="text-[0.75rem] font-semibold tracking-[0.2em] uppercase text-emerald-600">For irregular income</p>
+<!-- Hero -->
+<section class="banner">
+  <div class="container-xl section" style="padding-top: 2.5rem; padding-bottom: 2.5rem;">
+    <div class="grid-responsive">
+      <!-- Title -->
+      <div class="grid-area-title">
+        <p class="font-semibold tracking-[0.2em] uppercase text-emerald-600 leading-relaxed mb-6">For irregular income</p>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-slate-900">
+          See how long your money will last — even with irregular income.
+        </h1>
+      </div>
 
-          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-slate-900">
-            See how long your money will last — even with irregular income.
-          </h1>
-
-          <p class="text-base sm:text-lg text-slate-700 leading-relaxed max-w-xl">
-            FortuneTell shows your future balance, weekly risk, and days of cash remaining — so you know what's coming before it happens.
-          </p>
-
-          <ul class="space-y-3 text-sm sm:text-base text-slate-700">
-            <li class="flex items-start space-x-3">
-              <div class="mt-1 w-5 h-5 rounded-full bg-emerald-400 flex items-center justify-center">
-                <span class="text-xs font-bold text-emerald-900">✓</span>
+      <!-- Mockup -->
+      <div class="grid-area-mockup">
+        <div class="floating mx-auto max-w-xs">
+          <div class="relative mx-auto h-[520px] w-[280px] rounded-[2.5rem] bg-slate-200 shadow-card p-4">
+            <div class="flex h-full flex-col overflow-hidden rounded-[2rem] bg-white border border-slate-200">
+              <!-- Status bar -->
+              <div class="flex items-center justify-between border-b border-slate-200 bg-white px-4 py-2 text-[11px] text-slate-500">
+                <span>9:41</span>
+                <div class="flex items-center space-x-1">
+                  <span>📶</span>
+                  <span>📡</span>
+                  <span>🔋</span>
+                </div>
               </div>
-              <span>See <strong>how many days your money will last</strong> instead of hoping you'll reach payday.</span>
-            </li>
-            <li class="flex items-start space-x-3">
-              <div class="mt-1 w-5 h-5 rounded-full bg-emerald-400 flex items-center justify-center">
-                <span class="text-xs font-bold text-emerald-900">✓</span>
+
+              <!-- Top summary -->
+              <div class="border-b border-slate-200 px-4 py-4 space-y-1">
+                <p class="text-[11px] uppercase tracking-wide text-slate-500">Cash lasts</p>
+                <p class="text-2xl font-bold text-slate-900">9 days</p>
+                <p class="text-xs text-slate-500">
+                  If nothing changes and your planned jobs pay as expected.
+                </p>
               </div>
-              <span><strong>Add gigs and invoices the moment they're planned</strong>—don't wait for the payment to land in your account.</span>
-            </li>
-            <li class="flex items-start space-x-3">
-              <div class="mt-1 w-5 h-5 rounded-full bg-emerald-400 flex items-center justify-center">
-                <span class="text-xs font-bold text-emerald-900">✓</span>
+
+              <!-- Balance + this week -->
+              <div class="border-b border-slate-200 px-4 py-3 flex items-center justify-between">
+                <div>
+                  <p class="text-[11px] text-slate-500">Current balance</p>
+                  <p class="text-lg font-semibold text-slate-900">$642.18</p>
+                </div>
+                <div class="text-right">
+                  <p class="text-[11px] text-slate-500">This week left over</p>
+                  <p class="text-sm font-semibold text-emerald-600">$74.50</p>
+                </div>
               </div>
-              <span>
-                Based on <strong>80+ real stories</strong> from freelancers, gig workers, and solopreneurs who said normal budget apps don't work for their reality.
-              </span>
-            </li>
-          </ul>
 
-          <div class="space-y-2">
-            <h3 class="text-sm sm:text-base font-semibold text-slate-900">
-              What people with irregular income keep saying
-            </h3>
-            <ul class="space-y-2 text-sm sm:text-base text-slate-700">
-              <li class="flex items-start space-x-3">
-                <div class="mt-1 w-5 h-5 rounded-full bg-emerald-400 flex items-center justify-center">
-                  <span class="text-xs font-bold text-emerald-900">✓</span>
-                </div>
-                <span>I just need to know how long my money will last.</span>
-              </li>
-              <li class="flex items-start space-x-3">
-                <div class="mt-1 w-5 h-5 rounded-full bg-emerald-400 flex items-center justify-center">
-                  <span class="text-xs font-bold text-emerald-900">✓</span>
-                </div>
-                <span>Monthly budgets don’t match how I actually get paid.</span>
-              </li>
-              <li class="flex items-start space-x-3">
-                <div class="mt-1 w-5 h-5 rounded-full bg-emerald-400 flex items-center justify-center">
-                  <span class="text-xs font-bold text-emerald-900">✓</span>
-                </div>
-                <span>I want reliable manual control without bank sync issues.</span>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Hero waitlist form -->
-          <div class="mt-6 max-w-xl card">
-            <form class="waitlist-form space-y-3 sm:space-y-0 sm:flex sm:items-center sm:space-x-3" data-source="hero">
-              <div class="flex-1">
-                <label for="hero-email" class="sr-only">Email</label>
-                <input
-                  id="hero-email"
-                  type="email"
-                  name="email"
-                  required
-                  autocomplete="email"
-                  placeholder="Enter your email to join early users"
-                  class="input"
-                />
-              </div>
-              <button
-                type="submit"
-                class="w-full sm:w-auto mt-2 sm:mt-0 btn-primary px-5 py-3 text-sm">
-                Join Early Users
-              </button>
-            </form>
-            <p class="mt-2 text-xs text-emerald-600 waitlist-status"></p>
-            <p class="mt-1 text-[11px] text-slate-500">
-              You'll be among the first to try the Free 30-day forecast and Essential 90-day forecast.
-            </p>
-          </div>
-        </div>
-
-        <!-- Right: simplified app mockup -->
-        <div class="relative">
-          <div class="floating mx-auto max-w-xs">
-            <div class="relative mx-auto h-[520px] w-[280px] rounded-[2.5rem] bg-slate-200 shadow-card p-4">
-              <div class="flex h-full flex-col overflow-hidden rounded-[2rem] bg-white border border-slate-200">
-                <!-- Status bar -->
-                <div class="flex items-center justify-between border-b border-slate-200 bg-slate-50 px-4 py-2 text-[11px] text-slate-500">
-                  <span>9:41</span>
-                  <div class="flex items-center space-x-1">
-                    <span>📶</span>
-                    <span>📡</span>
-                    <span>🔋</span>
-                  </div>
-                </div>
-
-                <!-- Top summary -->
-                <div class="border-b border-slate-200 px-4 py-4 space-y-1">
-                  <p class="text-[11px] uppercase tracking-wide text-slate-500">Cash lasts</p>
-                  <p class="text-2xl font-bold text-slate-900">9 days</p>
-                  <p class="text-xs text-slate-500">
-                    If nothing changes and your planned jobs pay as expected.
-                  </p>
-                </div>
-
-                <!-- Balance + this week -->
-                <div class="border-b border-slate-200 px-4 py-3 flex items-center justify-between">
+              <!-- Simple timeline -->
+              <div class="flex-1 px-4 py-4 space-y-8 overflow-y-auto">
+                <div class="flex items-center justify-between">
                   <div>
-                    <p class="text-[11px] text-slate-500">Current balance</p>
-                    <p class="text-lg font-semibold text-slate-900">$642.18</p>
+                    <p class="text-sm font-medium text-slate-900">This week's bills</p>
+                    <p class="text-xs text-slate-500">Groceries, phone, gas</p>
                   </div>
                   <div class="text-right">
-                    <p class="text-[11px] text-slate-500">This week left over</p>
-                    <p class="text-sm font-semibold text-emerald-600">$74.50</p>
+                    <p class="text-sm font-semibold text-rose-600">- $240.00</p>
+                    <p class="text-[11px] text-slate-500">Leaves $402.18</p>
                   </div>
                 </div>
 
-                <!-- Simple timeline -->
-                <div class="flex-1 px-4 py-4 space-y-3 overflow-y-auto">
-                  <div class="flex items-center justify-between">
-                    <div>
-                      <p class="text-sm font-medium text-slate-900">This week's bills</p>
-                      <p class="text-xs text-slate-500">Groceries, phone, gas</p>
-                    </div>
-                    <div class="text-right">
-                      <p class="text-sm font-semibold text-rose-600">- $240.00</p>
-                      <p class="text-[11px] text-slate-500">Leaves $402.18</p>
-                    </div>
+                <div class="flex items-center justify-between">
+                  <div>
+                    <p class="text-sm font-medium text-slate-900">Next job</p>
+                    <p class="text-xs text-slate-500">Friday · part-time shift</p>
                   </div>
-
-                  <div class="flex items-center justify-between">
-                    <div>
-                      <p class="text-sm font-medium text-slate-900">Next job</p>
-                      <p class="text-xs text-slate-500">Friday · part-time shift</p>
-                    </div>
-                    <div class="text-right">
-                      <p class="text-sm font-semibold text-emerald-600">+ $320.00</p>
-                      <p class="text-[11px] text-slate-500">Jumps to $722.18</p>
-                    </div>
-                  </div>
-
-                  <div class="flex items-center justify-between">
-                    <div>
-                      <p class="text-sm font-medium text-slate-900">Upcoming rent</p>
-                      <p class="text-xs text-slate-500">Due in 9 days</p>
-                    </div>
-                    <div class="text-right">
-                      <p class="text-sm font-semibold text-amber-600">- $580.00</p>
-                      <p class="text-[11px] text-slate-500">Lowest: $142.18</p>
-                    </div>
-                  </div>
-
-                  <div class="mt-2 rounded-xl border border-emerald-100 bg-emerald-50 px-3 py-2">
-                    <p class="text-[11px] font-semibold uppercase tracking-wide text-emerald-700 mb-1">
-                      Quick summary
-                    </p>
-                    <p class="text-xs text-slate-800">
-                      You're safe for the next 9 days. One more small job would push your lowest balance above $200.
-                    </p>
+                  <div class="text-right">
+                    <p class="text-sm font-semibold text-emerald-600">+ $320.00</p>
+                    <p class="text-[11px] text-slate-500">Jumps to $722.18</p>
                   </div>
                 </div>
 
-                <!-- Bottom nav -->
-                <div class="grid grid-cols-3 border-t border-slate-200 bg-slate-50 text-[11px] text-slate-500">
-                  <button class="py-2 font-medium text-emerald-600">Timeline</button>
-                  <button class="py-2">Weekly plan</button>
-                  <button class="py-2">Accounts</button>
+                <div class="flex items-center justify-between">
+                  <div>
+                    <p class="text-sm font-medium text-slate-900">Upcoming rent</p>
+                    <p class="text-xs text-slate-500">Due in 9 days</p>
+                  </div>
+                  <div class="text-right">
+                    <p class="text-sm font-semibold text-amber-600">- $580.00</p>
+                    <p class="text-[11px] text-slate-500">Lowest: $142.18</p>
+                  </div>
                 </div>
+
+                <div class="mt-4 rounded-xl border border-emerald-100 bg-emerald-50 px-3 py-2">
+                  <p class="text-[11px] font-semibold uppercase tracking-wide text-emerald-700 mb-1">
+                    Quick summary
+                  </p>
+                  <p class="text-xs text-slate-800">
+                    You're safe for the next 9 days. One more small job would push your lowest balance above $200.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Bottom nav -->
+              <div class="grid grid-cols-3 border-t border-slate-200 bg-white text-[11px] text-slate-500">
+                <button class="py-2 font-medium text-emerald-600">Timeline</button>
+                <button class="py-2">Weekly plan</button>
+                <button class="py-2">Accounts</button>
               </div>
             </div>
           </div>
         </div>
+      </div>
 
+      <!-- Content (paragraph, list, form) -->
+      <div class="grid-area-content">
+        <p class="text-lg sm:text-xl text-slate-700 leading-relaxed max-w-xl">
+          FortuneTell shows your future balance, weekly risk, and days of cash remaining — so you know what's coming before it happens.
+        </p>
+
+        <ul class="space-y-4 text-lg sm:text-xl text-slate-700 mt-8">
+          <li class="flex items-start space-x-3">
+            <div class="mt-1 w-5 h-5 rounded-full bg-emerald-400 flex items-center justify-center">
+              <span class="text-xs font-bold text-emerald-900">✓</span>
+            </div>
+            <span>See <strong>how many days your money will last</strong> instead of hoping you'll reach payday.</span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <div class="mt-1 w-5 h-5 rounded-full bg-emerald-400 flex items-center justify-center">
+              <span class="text-xs font-bold text-emerald-900">✓</span>
+            </div>
+            <span><strong>Add gigs and invoices the moment they're planned</strong>—don't wait for the payment to land in your account.</span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <div class="mt-1 w-5 h-5 rounded-full bg-emerald-400 flex items-center justify-center">
+              <span class="text-xs font-bold text-emerald-900">✓</span>
+            </div>
+            <span>
+              Based on <strong>80+ real stories</strong> from freelancers, gig workers, and solopreneurs who said normal budget apps don't work for their reality.
+            </span>
+          </li>
+        </ul>
+
+        <!-- Hero waitlist form -->
+        <div class="mt-8 max-w-xl card">
+          <form class="waitlist-form space-y-8 sm:space-y-0 sm:flex sm:items-center sm:space-x-3" data-source="hero">
+            <div class="flex-1">
+              <label for="hero-email" class="sr-only">Email</label>
+              <input
+                id="hero-email"
+                type="email"
+                name="email"
+                required
+                autocomplete="email"
+                placeholder="Enter your email to join early users"
+                class="input"
+              />
+            </div>
+            <button
+              type="submit"
+              class="w-full sm:w-auto mt-4 sm:mt-0 btn-primary px-6 py-3.5 font-semibold">
+              Join Early Users
+            </button>
+          </form>
+          <p class="mt-4 text-xs text-emerald-600 waitlist-status"></p>
+          <p class="mt-4 text-[11px] text-slate-500">
+            You'll be among the first to try the Free 30-day forecast and Essential 90-day forecast.
+          </p>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <main>
     <!-- Who it's for -->
-    <section class="section bg-slate-50">
-      <div class="container-xl max-w-5xl text-center space-y-4">
-        <p class="text-[0.75rem] font-semibold tracking-[0.2em] uppercase text-emerald-600">Built for irregular income</p>
-        <h2 class="text-2xl sm:text-3xl font-semibold text-slate-900">
+    <section class="section bg-white border-b border-slate-200">
+      <div class="container-xl max-w-5xl text-center space-y-8">
+        <p class="font-semibold tracking-[0.2em] uppercase text-emerald-600 leading-relaxed mb-6">Built for irregular income</p>
+        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900">
           If your paycheck is never the same twice, this is for you.
         </h2>
-        <p class="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto leading-relaxed">
+        <p class="text-lg sm:text-xl text-slate-700 max-w-2xl mx-auto leading-relaxed">
           FortuneTell is built for people who think in weeks and gigs, not monthly budgets. It's designed for the exact problems 80+ freelancers, gig workers, and solopreneurs told us about.
         </p>
       </div>
@@ -373,18 +348,18 @@
     <!-- Why traditional budgeting tools break -->
     <section class="section bg-white">
       <div class="container-xl max-w-5xl space-y-5">
-        <div class="text-center space-y-2">
-          <p class="text-[0.75rem] font-semibold tracking-[0.2em] uppercase text-emerald-600">WHY MOST BUDGET APPS FAIL HERE</p>
-          <h2 class="text-2xl sm:text-3xl font-semibold text-slate-900">
+        <div class="text-center space-y-8">
+          <p class="font-semibold tracking-[0.2em] uppercase text-emerald-600 leading-relaxed mb-6">WHY MOST BUDGET APPS FAIL HERE</p>
+          <h2 class="text-3xl sm:text-4xl font-bold text-slate-900">
             Why traditional budgeting tools break with irregular income
           </h2>
         </div>
-        <ul class="space-y-2 text-sm sm:text-base text-slate-600 max-w-3xl mx-auto leading-relaxed">
+        <ul class="space-y-3 text-lg sm:text-xl text-slate-700 max-w-3xl mx-auto leading-relaxed">
           <li>• Monthly-first budgets assume predictable pay. Irregular income doesn’t follow calendar months.</li>
           <li>• Spending trackers show history. They don’t project your future balance.</li>
           <li>• Spreadsheets can work, but only with constant manual recalculation.</li>
         </ul>
-        <p class="text-sm sm:text-base text-slate-600 text-center leading-relaxed">
+        <p class="text-lg sm:text-xl text-slate-700 text-center leading-relaxed">
           FortuneTell answers one question: will I run out of money — before it happens.
         </p>
       </div>
@@ -394,13 +369,13 @@
     <section id="features" class="section bg-white border-y border-slate-100">
       <div class="container-xl max-w-6xl space-y-10">
         <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-          <div class="space-y-2">
-            <p class="text-[0.75rem] font-semibold tracking-[0.2em] uppercase text-emerald-600">Core features</p>
-            <h2 class="text-2xl sm:text-3xl font-semibold text-slate-900">
+          <div class="space-y-8">
+            <p class="font-semibold tracking-[0.2em] uppercase text-emerald-600 leading-relaxed mb-6">Core features</p>
+            <h2 class="text-3xl sm:text-4xl font-bold text-slate-900">
               See problems before they happen.
             </h2>
           </div>
-          <p class="text-sm sm:text-base text-slate-600 max-w-xl leading-relaxed">
+          <p class="text-lg sm:text-xl text-slate-700 max-w-xl leading-relaxed">
             Every screen answers one question: "Will I run out of money?" The answer is a number (days), not advice or categories.
           </p>
         </div>
@@ -410,8 +385,8 @@
             <div class="w-9 h-9 rounded-full inline-flex items-center justify-center mb-3 bg-emerald-100 text-xs font-semibold text-emerald-900">
               D
             </div>
-            <h3 class="text-base font-semibold text-slate-900">Days of cash remaining</h3>
-            <p class="text-sm text-slate-600 leading-relaxed">
+            <h3 class="text-xl font-bold text-slate-900">Days of cash remaining</h3>
+            <p class="text-lg sm:text-xl text-slate-700 leading-relaxed">
               Stop guessing if you'll make it to Friday. See the exact day your balance hits zero if nothing changes, and watch that day shift as you adjust your plan.
             </p>
           </div>
@@ -420,8 +395,8 @@
             <div class="w-9 h-9 rounded-full inline-flex items-center justify-center mb-3 bg-emerald-100 text-xs font-semibold text-emerald-900">
               F
             </div>
-            <h3 class="text-base font-semibold text-slate-900">Future gigs and invoices</h3>
-            <p class="text-sm text-slate-600 leading-relaxed">
+            <h3 class="text-xl font-bold text-slate-900">Future gigs and invoices</h3>
+            <p class="text-lg sm:text-xl text-slate-700 leading-relaxed">
               Add work the moment it's planned, not when it pays. See how each job, invoice, or shift changes your runway so you know whether to take more work or rest.
             </p>
           </div>
@@ -430,8 +405,8 @@
             <div class="w-9 h-9 rounded-full inline-flex items-center justify-center mb-3 bg-emerald-100 text-xs font-semibold text-emerald-900">
               W
             </div>
-            <h3 class="text-base font-semibold text-slate-900">Weekly, not just monthly</h3>
-            <p class="text-sm text-slate-600 leading-relaxed">
+            <h3 class="text-xl font-bold text-slate-900">Weekly, not just monthly</h3>
+            <p class="text-lg sm:text-xl text-slate-700 leading-relaxed">
               Most cash crises happen inside the month, not at the end. FortuneTell shows week by week so you see tight weeks coming and can adjust before they hit.
             </p>
           </div>
@@ -440,22 +415,22 @@
     </section>
 
     <!-- Privacy -->
-    <section class="section bg-slate-50">
-      <div class="container-xl max-w-5xl space-y-6">
-        <div class="space-y-2">
-          <p class="text-[0.75rem] font-semibold tracking-[0.2em] uppercase text-emerald-600">Privacy first</p>
-          <h2 class="text-2xl sm:text-3xl font-semibold text-slate-900">
+    <section class="section bg-white border-b border-slate-200">
+      <div class="container-xl max-w-5xl space-y-8">
+        <div class="space-y-8">
+          <p class="font-semibold tracking-[0.2em] uppercase text-emerald-600 leading-relaxed mb-6">Privacy first</p>
+          <h2 class="text-3xl sm:text-4xl font-bold text-slate-900">
             Your financial data stays under your control.
           </h2>
         </div>
-        <div class="space-y-4 text-sm sm:text-base text-slate-600 leading-relaxed">
+        <div class="space-y-8 text-lg sm:text-xl text-slate-700 leading-relaxed">
           <p>
             FortuneTell is designed to work without connecting to your bank or financial accounts. You enter only what you choose, and the app functions without requiring data sharing.
           </p>
           <p>
             FortuneTell is manual-entry-first by design. No bank connection is required.
           </p>
-          <ul class="space-y-2">
+          <ul class="space-y-3">
             <li>• Free plan: budget data stays on your device (account email stored for login)</li>
             <li>• No in-app tracking or analytics inside the application itself</li>
             <li>• No selling or sharing of personal financial data</li>
@@ -470,15 +445,15 @@
 
     <!-- Accessibility -->
     <section class="section bg-white">
-      <div class="container-xl max-w-5xl space-y-6">
-        <div class="space-y-2">
-          <p class="text-[0.75rem] font-semibold tracking-[0.2em] uppercase text-emerald-600">Accessibility</p>
-          <h2 class="text-2xl sm:text-3xl font-semibold text-slate-900">
+      <div class="container-xl max-w-5xl space-y-8">
+        <div class="space-y-8">
+          <p class="font-semibold tracking-[0.2em] uppercase text-emerald-600 leading-relaxed mb-6">Accessibility</p>
+          <h2 class="text-3xl sm:text-4xl font-bold text-slate-900">
             Designed for clarity and usability.
           </h2>
         </div>
-        <div class="space-y-4 text-sm sm:text-base text-slate-600 leading-relaxed">
-          <ul class="space-y-2">
+        <div class="space-y-8 text-lg sm:text-xl text-slate-700 leading-relaxed">
+          <ul class="space-y-3">
             <li>• High-contrast interface for readability</li>
             <li>• Clear visual hierarchy so key numbers stand out immediately</li>
             <li>• Plain language labels instead of technical or financial jargon</li>
@@ -493,99 +468,119 @@
     </section>
 
     <!-- Pricing -->
-    <section id="pricing" class="section bg-slate-50 border-b border-slate-100">
+    <section id="pricing" class="section bg-white border-b border-slate-200">
       <div class="container-xl max-w-5xl space-y-10">
-        <div class="text-center space-y-3">
-          <p class="text-[0.75rem] font-semibold tracking-[0.2em] uppercase text-emerald-600">Pricing</p>
-          <h2 class="text-2xl sm:text-3xl font-semibold text-slate-900">
+        <div class="text-center space-y-8">
+          <p class="font-semibold tracking-[0.2em] uppercase text-emerald-600 leading-relaxed mb-6">Pricing</p>
+          <h2 class="text-3xl sm:text-4xl font-bold text-slate-900">
             Pricing that fits irregular income.
           </h2>
-          <p class="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto leading-relaxed">
+          <p class="text-lg sm:text-xl text-slate-700 max-w-2xl mx-auto leading-relaxed">
             Start with Free to see if it works for you. Upgrade to Essential when you want a longer runway and sync across devices. Cancel anytime, no contracts.
           </p>
         </div>
 
-        <div class="grid gap-7 md:grid-cols-2">
+        <div class="grid gap-8 md:grid-cols-2">
           <!-- Free -->
-          <div class="feature-card md:p-7">
-            <div class="space-y-1">
-              <h3 class="text-lg font-semibold text-slate-900">Free</h3>
-              <p class="text-xs uppercase tracking-wide text-slate-500">Short-term cash clarity</p>
+          <div class="bg-white rounded-2xl border border-slate-200 p-8 shadow-lg">
+            <div class="space-y-2 mb-6">
+              <h3 class="text-2xl font-bold text-slate-900">Free</h3>
+              <p class="text-sm uppercase tracking-wide text-slate-600 font-medium">Short-term cash clarity</p>
             </div>
-            <p class="text-3xl font-bold text-slate-900">$0</p>
-            <ul class="space-y-2 text-sm text-slate-600">
-              <li>• 30-day forecast</li>
-              <li>• 1 account</li>
-              <li>• Unlimited manual &amp; future transactions</li>
-              <li>• Week-by-week view and days-of-cash indicator</li>
-              <li>• Local-only data (your device, no cloud)</li>
-              <li>• Minimal, privacy-safe ads</li>
-              <li>• Manual backup / restore</li>
+            <p class="text-4xl font-bold text-slate-900 mb-6">$0</p>
+            <ul class="space-y-3 text-base text-slate-700 mb-8">
+              <li class="flex items-start">
+                <span class="text-emerald-600 mr-3">•</span>
+                <span>30-day forecast</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-emerald-600 mr-3">•</span>
+                <span>1 account</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-emerald-600 mr-3">•</span>
+                <span>Unlimited manual & future transactions</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-emerald-600 mr-3">•</span>
+                <span>Week-by-week view and days-of-cash indicator</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-emerald-600 mr-3">•</span>
+                <span>Local-only data (your device, no cloud)</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-emerald-600 mr-3">•</span>
+                <span>Minimal, privacy-safe ads</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-emerald-600 mr-3">•</span>
+                <span>Manual backup / restore</span>
+              </li>
             </ul>
-            <form class="waitlist-form space-y-2 mt-4" data-source="pricing-free">
-              <label for="pricing-free-email" class="sr-only">Email</label>
-              <input
-                id="pricing-free-email"
-                type="email"
-                name="email"
-                required
-                placeholder="you@example.com"
-                autocomplete="email"
-                class="input"
-              />
-              <button
-                type="submit"
-                class="w-full btn-primary px-4 py-3 text-sm shadow-soft">
+            <form class="waitlist-form space-y-4" data-source="pricing-free">
+              <input type="email" name="email" required placeholder="you@example.com" autocomplete="email" class="w-full px-4 py-3.5 rounded-lg border border-slate-300 bg-white text-slate-900 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all duration-200" />
+              <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3.5 rounded-lg font-semibold shadow-md transition-all duration-200">
                 Join Early Users for Free
               </button>
-              <p class="waitlist-status text-[11px] text-emerald-700"></p>
+              <p class="waitlist-status text-sm text-emerald-700"></p>
             </form>
           </div>
-
           <!-- Essential -->
-          <div class="feature-card border-emerald-300 md:p-7">
-            <div class="inline-flex items-center rounded-full bg-emerald-50 px-3 py-1 text-[11px] font-medium text-emerald-700">
-              Best for freelancers &amp; gig workers
+          <div class="bg-white rounded-2xl border-2 border-emerald-400 p-8 shadow-lg relative">
+            <div class="inline-flex items-center rounded-full bg-emerald-100 px-4 py-2 text-xs font-bold text-emerald-800 absolute -top-3">
+              Best for freelancers & gig workers
             </div>
-            <div class="space-y-1 mt-3">
-              <h3 class="text-lg font-semibold text-slate-900">Essential</h3>
-              <p class="text-xs uppercase tracking-wide text-emerald-600">90-day stability layer</p>
+            <div class="space-y-2 mb-6 mt-4">
+              <h3 class="text-2xl font-bold text-slate-900">Essential</h3>
+              <p class="text-sm uppercase tracking-wide text-emerald-700 font-medium">90-day stability layer</p>
             </div>
-            <div class="space-y-1">
-              <p class="text-3xl font-bold text-slate-900">
-                $8.99<span class="text-base font-normal text-slate-500">/month</span>
+            <div class="space-y-2 mb-6">
+              <p class="text-4xl font-bold text-slate-900">
+                $8.99<span class="text-lg font-normal text-slate-600">/month</span>
               </p>
-              <p class="text-xs text-slate-500">Cancel anytime</p>
+              <p class="text-sm text-slate-600">Cancel anytime</p>
             </div>
-            <ul class="space-y-2 text-sm text-slate-700">
-              <li>• Everything in Free</li>
-              <li>• 90-day forecast</li>
-              <li>• Up to 3 accounts</li>
-              <li>• Cloud sync + multi-device access</li>
-              <li>• Category summaries and weekly/monthly views</li>
-              <li>• Unlimited planned income rules</li>
-              <li>• Zero ads</li>
+            <ul class="space-y-3 text-base text-slate-700 mb-8">
+              <li class="flex items-start">
+                <span class="text-emerald-600 mr-3">•</span>
+                <span>Everything in Free</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-emerald-600 mr-3">•</span>
+                <span>90-day forecast</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-emerald-600 mr-3">•</span>
+                <span>Up to 3 accounts</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-emerald-600 mr-3">•</span>
+                <span>Cloud sync + multi-device access</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-emerald-600 mr-3">•</span>
+                <span>Category summaries and weekly/monthly views</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-emerald-600 mr-3">•</span>
+                <span>Unlimited planned income rules</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-emerald-600 mr-3">•</span>
+                <span>Zero ads</span>
+              </li>
             </ul>
-            <form class="waitlist-form space-y-2 mt-4" data-source="pricing-essential">
-              <label for="pricing-essential-email" class="sr-only">Email</label>
-              <input
-                id="pricing-essential-email"
-                type="email"
-                name="email"
-                required
-                placeholder="you@example.com"
-                autocomplete="email"
-                class="input border-emerald-300"
-              />
-              <button
-                type="submit"
-                class="w-full btn-primary px-4 py-3 text-sm shadow-soft">
+            <form class="waitlist-form space-y-4" data-source="pricing-essential">
+              <input type="email" name="email" required placeholder="you@example.com" autocomplete="email" class="w-full px-4 py-3.5 rounded-lg border border-emerald-300 bg-white text-slate-900 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all duration-200" />
+              <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3.5 rounded-lg font-semibold shadow-md transition-all duration-200">
                 Join Essential Early Users
               </button>
-              <p class="waitlist-status text-[11px] text-emerald-700"></p>
+              <p class="waitlist-status text-sm text-emerald-700"></p>
             </form>
           </div>
         </div>
+
       </div>
     </section>
 
@@ -593,13 +588,13 @@
     <section id="guides" class="section bg-white">
       <div class="container-xl max-w-5xl space-y-8">
         <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-          <div class="space-y-2">
-            <p class="text-[0.75rem] font-semibold tracking-[0.2em] uppercase text-emerald-600">Guides for irregular income</p>
-            <h2 class="text-2xl sm:text-3xl font-semibold text-slate-900">
+          <div class="space-y-8">
+            <p class="font-semibold tracking-[0.2em] uppercase text-emerald-600 leading-relaxed mb-6">Guides for irregular income</p>
+            <h2 class="text-3xl sm:text-4xl font-bold text-slate-900">
               Pick the guide that sounds like you.
             </h2>
           </div>
-          <p class="text-sm sm:text-base text-slate-600 max-w-md leading-relaxed">
+          <p class="text-lg sm:text-xl text-slate-700 max-w-md leading-relaxed">
             Each guide is a short explainer built around the same cash-flow forecasting that powers FortuneTell. Read the one that fits your situation.
           </p>
         </div>
@@ -646,20 +641,20 @@
     </section>
 
     <!-- Waitlist (central) -->
-    <section id="waitlist" class="section bg-slate-50 border-y border-slate-100">
-      <div class="container-xl max-w-3xl space-y-6">
-        <div class="text-center space-y-3">
-          <p class="text-[0.75rem] font-semibold tracking-[0.2em] uppercase text-emerald-600">Join early users</p>
-          <h2 class="text-2xl sm:text-3xl font-semibold text-slate-900">
+    <section id="waitlist" class="section bg-white border-y border-slate-200">
+      <div class="container-xl max-w-3xl space-y-8">
+        <div class="text-center space-y-8">
+          <p class="font-semibold tracking-[0.2em] uppercase text-emerald-600 leading-relaxed mb-6">Join early users</p>
+          <h2 class="text-3xl sm:text-4xl font-bold text-slate-900">
             Be among the first to use FortuneTell.
           </h2>
-          <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
+          <p class="text-lg sm:text-xl text-slate-700 leading-relaxed">
             Share your email to get early access. You'll be among the first to try FortuneTell's Free and Essential plans.
           </p>
         </div>
 
         <div class="card md:p-7">
-          <form class="waitlist-form space-y-3 md:flex md:items-center md:space-y-0 md:space-x-3" data-source="waitlist-section">
+          <form class="waitlist-form space-y-8 md:flex md:items-center md:space-y-0 md:space-x-3" data-source="waitlist-section">
             <div class="flex-1">
               <label for="waitlist-email" class="sr-only">Email</label>
               <input
@@ -670,18 +665,18 @@
                 autocomplete="email"
                 placeholder="you@example.com"
                 class="input"
-              />
-            </div>
-            <button
-              type="submit"
-              class="w-full md:w-auto btn-primary px-5 py-3 text-sm shadow-soft">
-              Join Early Users
-            </button>
+            />
+          </div>
+          <button
+            type="submit"
+            class="w-full md:w-auto btn-primary px-6 py-3.5 font-semibold shadow-soft">
+            Join Early Users
+          </button>
           </form>
-          <p class="mt-2 text-[11px] text-slate-500">
+          <p class="mt-4 text-[11px] text-slate-500">
             No newsletters, no daily tips. Just relevant updates as FortuneTell gets closer to launch.
           </p>
-          <p class="waitlist-status text-[11px] text-emerald-700 mt-1"></p>
+          <p class="waitlist-status text-[11px] text-emerald-700 mt-4"></p>
         </div>
       </div>
     </section>
@@ -689,46 +684,46 @@
     <!-- FAQ -->
     <section class="section bg-white">
       <div class="container-xl max-w-5xl space-y-8">
-        <div class="text-center space-y-3">
-          <p class="text-[0.75rem] font-semibold tracking-[0.2em] uppercase text-emerald-600">FAQ</p>
-          <h2 class="text-2xl sm:text-3xl font-semibold text-slate-900">
+        <div class="text-center space-y-8">
+          <p class="font-semibold tracking-[0.2em] uppercase text-emerald-600 leading-relaxed mb-6">FAQ</p>
+          <h2 class="text-3xl sm:text-4xl font-bold text-slate-900">
             Questions about FortuneTell.
           </h2>
         </div>
 
         <div class="space-y-5">
-          <div class="bg-slate-50 border border-slate-200 rounded-card p-5 space-y-2 shadow-soft">
-            <h3 class="text-sm font-semibold text-slate-900">
+          <div class="bg-white border border-slate-200 rounded-card p-5 space-y-8 shadow-soft">
+            <h3 class="text-xl font-bold text-slate-900">
               Does FortuneTell work if my income changes every week?
             </h3>
-            <p class="text-sm text-slate-600 leading-relaxed">
+            <p class="text-lg sm:text-xl text-slate-700 leading-relaxed">
               Yes. FortuneTell assumes irregular income by default. You can enter one-off payments, recurring gigs, retainers, and invoices whenever they're planned, not just when they pay.
             </p>
           </div>
 
-          <div class="bg-slate-50 border border-slate-200 rounded-card p-5 space-y-2 shadow-soft">
-            <h3 class="text-sm font-semibold text-slate-900">
+          <div class="bg-white border border-slate-200 rounded-card p-5 space-y-8 shadow-soft">
+            <h3 class="text-xl font-bold text-slate-900">
               Do I have to connect my bank?
             </h3>
-            <p class="text-sm text-slate-600 leading-relaxed">
+            <p class="text-lg sm:text-xl text-slate-700 leading-relaxed">
               No. FortuneTell is built for manual entry. No bank connection is required.
             </p>
           </div>
 
-          <div class="bg-slate-50 border border-slate-200 rounded-card p-5 space-y-2 shadow-soft">
-            <h3 class="text-sm font-semibold text-slate-900">
+          <div class="bg-white border border-slate-200 rounded-card p-5 space-y-8 shadow-soft">
+            <h3 class="text-xl font-bold text-slate-900">
               What's the difference between Free and Essential?
             </h3>
-            <p class="text-sm text-slate-600 leading-relaxed">
+            <p class="text-lg sm:text-xl text-slate-700 leading-relaxed">
               Free gives you a 30-day forecast for one account using local storage. Essential unlocks a 90-day forecast, up to three accounts, sync across devices, category summaries, and no ads.
             </p>
           </div>
 
-          <div class="bg-slate-50 border border-slate-200 rounded-card p-5 space-y-2 shadow-soft">
-            <h3 class="text-sm font-semibold text-slate-900">
+          <div class="bg-white border border-slate-200 rounded-card p-5 space-y-8 shadow-soft">
+            <h3 class="text-xl font-bold text-slate-900">
               Is my data private?
             </h3>
-            <p class="text-sm text-slate-600 leading-relaxed">
+            <p class="text-lg sm:text-xl text-slate-700 leading-relaxed">
               Your budget data is stored locally in your browser. Your account email is stored securely for login. You can export and import JSON backups at any time.
             </p>
           </div>
@@ -739,7 +734,7 @@
 
   <!-- Footer -->
   <footer class="bg-slate-50 border-t border-slate-200 py-8">
-    <div class="container-xl max-w-5xl space-y-4">
+    <div class="container-xl max-w-5xl space-y-8">
       <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
         <div class="space-y-1">
           <p class="text-sm font-semibold text-slate-800">FortuneTell</p>
