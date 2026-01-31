@@ -1,0 +1,63 @@
+name: Protect design tokens
+
+on:
+  pull_request:
+
+jobs:
+  protect-tokens:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Enforce Token System 2.0 ownership and location
+        run: |
+          # 1) Block direct edits to docs/design-tokens/tokens.css in this PR
+          BASE_REF="${GITHUB_BASE_REF:-}"
+          if [ -n "$BASE_REF" ]; then
+            git fetch origin "$BASE_REF" --depth=1
+            CHANGED=$(git diff --name-only "origin/$BASE_REF"...HEAD | grep "^docs/design-tokens/tokens.css" || true)
+            if [ -n "$CHANGED" ]; then
+              echo "ERROR: docs/design-tokens/tokens.css is automation-owned."
+              echo "Edit docs/design-tokens/tokens.yaml in fortunetell-docs and let the docs-sync workflow regenerate tokens.css."
+              exit 1
+            fi
+          else
+            echo "GITHUB_BASE_REF is not set; skipping tokens.css diff check."
+          fi
+
+          # 2) If tokens.css is not present yet (docs-sync hasn’t run with 2.0), skip the token redefinition check
+          if [ ! -f "docs/design-tokens/tokens.css" ]; then
+            echo "docs/design-tokens/tokens.css not found; skipping token redefinition check."
+            exit 0
+          fi
+
+          # 3) Extract 2.0 token names from docs/design-tokens/tokens.css
+          TOKENS=$(grep -o "^[[:space:]]*--[a-zA-Z0-9_-]\+" docs/design-tokens/tokens.css | sed 's/^[[:space:]]*//' | sort -u)
+
+          if [ -z "$TOKENS" ]; then
+            echo "No token names detected in docs/design-tokens/tokens.css; nothing to enforce."
+            exit 0
+          fi
+
+          # 4) Search for any redefinition of these 2.0 tokens outside docs/design-tokens/tokens.css
+          VIOLATIONS=""
+          for NAME in $TOKENS; do
+            MATCHES=$(grep -R "^[[:space:]]*$NAME[[:space:]]*:" --include="*.css" . \
+              | grep -v "docs/design-tokens/tokens.css" || true)
+            if [ -n "$MATCHES" ]; then
+              VIOLATIONS="${VIOLATIONS}
+$MATCHES"
+            fi
+          done
+
+          if [ -n "$VIOLATIONS" ]; then
+            echo "ERROR: Token System 2.0 CSS custom properties may only be defined in docs/design-tokens/tokens.css."
+            echo "The following redefinitions were found outside docs/design-tokens/tokens.css:"
+            echo "$VIOLATIONS"
+            exit 1
+          fi
+
+          echo "Token System 2.0 guardrail checks passed."
